@@ -10,11 +10,9 @@ app = Flask('__main__')
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def proxy(path):
-    print(f'path: {path}')
     proxy_proc = ProxyProc(
         '{}{}'.format(settings.TARGET_URL, path),
-        request
-    )
+        request)
     return proxy_proc.get_response()
 
 

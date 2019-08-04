@@ -6,6 +6,8 @@ from requests import get
 
 import settings
 
+__all__ = ['ProxyProc']
+
 
 class ProxyProc(object):
     _res = None
